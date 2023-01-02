@@ -15,7 +15,7 @@
             window.location.href = 'http://127.0.0.1:8000/login';
         }, 4700); // 5 seconds
     </script>
-    <ul>
+    <ul class="loader-ul">
         <li>l</li>
         <li>a</li>
         <li>w</li>

@@ -13,9 +13,12 @@ class CustPagesController extends Controller
         $req->session()->put('user', ['username' => $req->get('userName'), 'password' => $req->get('password')]);
         //$req->session()->put('user', ['password' => $data['password']]);
 
-
-        //print_r($req->get('password'));
-        return redirect('landing');
+        if (session('user')['password'] !== 'password') { //hard coded password will be in database later
+            session()->forget('user'); //if wrong password it clears the user session so on login page after redirecting back it will be clear instead of populated w wrong info
+            return redirect('login');
+        } else {
+            return redirect('landing'); //redirects to landing if password = password
+        }
     }
     public static function SessionUsername() //this is checking for session details for login info to self populate
     {
@@ -28,5 +31,10 @@ class CustPagesController extends Controller
         if (Session::has('user')) {
             return session('user')['password'];
         } else return '';
+    }
+    public function Logout(Request $request) //this is a logout function that logs user out on session/remove url and redirects to index
+    {
+        $request->session()->forget('user');
+        return redirect('/');
     }
 }
