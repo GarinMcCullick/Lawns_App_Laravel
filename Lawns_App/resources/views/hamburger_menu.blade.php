@@ -3,10 +3,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--<script>
     function logoutJS() {
-        <?php /*unset($_POST);
-        $logout = new login;
-        $logout->Logout();
-        */ ?>
+        <?php unset($_POST);
+
+        ?>
     }
 </script>-->
 <ul class="menu">
@@ -16,7 +15,7 @@
     <li><a class="menuItem" href="./refer_a_friend">Referalls</a></li>
     <li><a class="menuItem" href="./wallet">My Wallet</a></li>
     <li><a class="menuItem" href="./orders">My Orders</a></li>
-    <li><a class="menuItem" href="/" onclick="logoutJS();">Logout</a></li>
+    <li><a class="menuItem" href="/session/remove" onclick="logoutJS();">Logout</a></li>
     <!--this is the logout for now it just unsets form data from login... will need changed in future-->
 </ul>
 <button class="hamburger">

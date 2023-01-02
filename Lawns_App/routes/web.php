@@ -45,3 +45,5 @@ Route::get('/settings', function () {
 Route::get('/wallet', function () {
     return view('wallet') . view('hamburger_menu');
 });
+
+Route::get('session/remove', [CustPagesController::class, 'Logout']);//there is no view for session/remove it just leads to a redirect and a point to hit the logout function
