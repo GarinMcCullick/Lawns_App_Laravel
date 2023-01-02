@@ -1,0 +1,740 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+section {
+  width: 100vw;
+  height: 100vh;
+}
+/****************************welcome page styles*******************************/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0; 
+    font-family: 'Quicksand', sans-serif;
+   }
+.loader-body{
+    background: url(grass.jpg);
+}
+ul{
+    position: absolute;
+    top: 50%;  left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    color: white;
+    background-color:rgba(0, 0, 0, 0.7)
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    font-size: 90px;
+    text-transform: uppercase;
+    margin: 0 15px;
+}
+
+.loader{
+    position: absolute;
+    top: 60%;  
+    left: 50%;
+    transform: translate(-50%,-50%);
+  width: 25%;
+  height: 1%;
+  background: transparent;
+  border: solid 1px #555555;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.loader:before{
+    content: '';
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      animation: loader 5s ease-in infinite;
+      background: linear-gradient(to right, black 0%, black 50%, lightgrey 50%, darkgrey 100%);
+  }
+  
+@keyframes loader{
+  0%{
+    left: -100%}
+  75%{
+    left: -10%}
+  85%{
+    left: -5%}
+  95%{
+    left: 0}
+}
+/*---------------------------login.php styles---------------------------------*/
+.login-section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  background: url("./grass.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: green;
+  
+}
+.login-title-main{
+  margin-top:1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  width:500px;
+  height:15%;
+  background-color: white;
+  font-size: 48px;
+  letter-spacing: 0.5rem;
+  text-decoration: underline;
+}
+.login-inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  width: 500px;
+  height: 600px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.login-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  color: green;
+  font-size: 24px;
+}
+.form-container {
+  height: 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.form-container p a {
+  line-height: 1.5rem;
+}
+.login-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5rem;
+}
+.login-form input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.login-form #submit:hover{
+cursor:pointer;
+}
+.oauth-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 30%;
+  border-top: 1px solid green;
+}
+.oauth-container span {
+  height: 100px;
+  width: 100px;
+  display:flex;
+flex-flow:column wrap;
+justify-content: center;
+align-items: center;
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+background-color:#fefcff;
+}
+.oauth-container span:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.oauth-container span:hover a {
+    cursor:pointer;
+    text-decoration: underline;
+}
+.oauth-container span:hover i {
+    cursor:pointer;
+}
+.oauth-container span i{
+    width:100%;
+    height:80%;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items: center;
+}
+#google{
+    color:#de5246;
+}
+.google{
+    color:#de5246;
+}
+#instagram{
+    background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.instagram{
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#facebook{
+    color:#4267B2;
+}
+.facebook{
+    color:#4267B2;
+}
+/*---------------------------cust_landing.php styles--------------------------*/
+.cust-landing-section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background: url("./grass.jpg");
+  background-size: cover;
+  overflow-y: auto;
+}
+.content-container {
+  width: 85%;
+  height: auto;
+  min-height: 100%;
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+.title-container {
+  width: 80%;
+  height: 5%;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-text {
+  font-size: 32px;
+  color: #131313;
+  color: #e0dfdc;
+  letter-spacing: 0.1em;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+    0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+    0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+    0 22px 30px rgba(0, 0, 0, 0.9);
+}
+.search-container {
+  width: 70%;
+  height: 5%;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.user-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  width: 90%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25%;
+  height: 50%;
+  background-color: white;
+  margin-left: 5%;
+  margin-top: 5%;
+  border-radius: 10px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition: .3s;
+}
+.box:hover{
+  box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
+  transform: scale(1.05,1.05);
+  cursor:pointer;
+}
+.box img {
+  background: url("lawns.png");
+  width: 150px;
+  height: 175px;
+  border-radius: 100%;
+  height: 55%;
+  margin-top: 5%;
+}
+.box p {
+  margin-top: 2.5%;
+  height: 25%;
+}
+.box span {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+.box button {
+  width: 5.5rem;
+  height: 2.25rem;
+  border-bottom-right-radius: 10px;
+}
+.box button:hover {
+  cursor: pointer;
+}
+/*------------------------------------------------hamburger menu----------------------------------------*/
+.menuItem {
+  display: block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  text-decoration: underline;
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+  padding: 4px;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  width:200px;
+  z-index: 99;
+  background: black;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+  border-right:2px solid whitesmoke;
+  border-bottom:2px solid whitesmoke;
+  border-bottom-right-radius: 25px;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+/*----------------------------------------------Profile page styles------------------------------------------*/
+
+.profile-container{
+  width:80%;
+  height:90%;
+  background-color:whitesmoke;
+  border-radius:25px;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+}
+
+.profile-title{
+  width:100%;
+  height:10%;
+  
+  font-size:32px;
+  color:black;
+  text-align: center;
+}
+
+.profile-inputs-container{
+  width:100%;
+  height:100%;
+  
+  display: flex;
+  flex-flow:column wrap;
+  justify-content:start;
+}
+
+#user-profile-form{
+  width:100%;
+  height:20%;
+  
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-profile-form span{
+  display:flex;
+  flex-flow:column wrap;
+  align-items: center;
+}
+
+#user-profile-form span label{
+  margin-bottom: 1rem;
+}
+
+#user-profile-form textarea{
+  width:300px;
+  height:60px;
+  max-width:400px;
+  max-height:160px;
+}
+/*----------------------------------------------Settings page styles------------------------------------------*/
+.settings-container{
+  width:80%;
+  height:90%;
+  background-color:whitesmoke;
+  border-radius:25px;
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  padding:10px;
+}
+
+.profile-toggle-settings{
+  width:100%;
+  height:90%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: block;
+  margin-top:1rem;
+  width: 60px;
+  height: 34px;
+}
+
+.switch p {
+  width:400px;
+  height:auto;
+  font-size:24px;
+  margin-left:100px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#toggle-submit{
+  margin-left:10%;
+  margin-top:2rem;
+  width:100px;
+  height:50px;
+  background-color: skyblue;
+}
+
+#toggle-submit:hover{
+  cursor:pointer;
+}
+
+#toggle-submit:active{
+  background-color: lightblue;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*----------------------------------------------Refferal page styles------------------------------------------*/
+
+.refferal-container{
+  width:80%;
+  height:90%;
+  background-color:whitesmoke;
+  border-radius:25px;
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  padding:10px;
+}
+/*----------------------------------------------Wallet page styles------------------------------------------*/
+
+.cards-section{
+  width:100%;
+  height:40%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.wallet-card{
+  width:25%;
+  height:80%;
+  background-color: grey;
+  border-radius: 25px;
+}
+
+.wallet-create-card-container{
+  width:100%;
+  height:60%;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-card-form{
+  width:60%;
+  height:90%;
+  display:flex;
+  flex-flow:column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top:1px solid black;
+}
+
+.wallet-field-group{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-evenly;
+  width:100%;
+}
+
+#create-card-form .wallet-field-group span{
+  display:flex;
+  flex-flow:column wrap;
+  justify-content: space-evenly;
+}
+
+#create-card-form span label{
+  margin-bottom:1rem;
+  text-align: center;
+}
+
+#create-card-form #submit{
+  width:100px;
+  height:50px;
+  background-color: skyblue;
+}
+
+#create-card-form #submit:hover{
+  cursor:pointer;
+}
+
+#create-card-form #submit:active{
+  background-color: lightblue;
+}
+/*----------------------------------------------User orders page styles------------------------------------------*/
+
+.orders-container{
+  width:80%;
+  height:90%;
+  background-color:whitesmoke;
+  border-radius:25px;
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  padding:10px;
+}
+
+.prev-orders{
+width:100%;
+height:45%;
+display: flex;
+flex-flow:row wrap;
+}
+
+.card{
+width:20%;
+height:45%;
+background-color: grey;
+margin-left:2rem;
+margin-right:2rem;
+}
+
+.order-info{
+  width:100%;
+  height:55%;
+  background-color: lightgray;
+}
