@@ -8,6 +8,7 @@ $username = CustPagesController::SessionUsername();
 <html lang="en">
 
 <head>
+    <script src="https://kit.fontawesome.com/1a52a82c6c.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,11 @@ $username = CustPagesController::SessionUsername();
 
 <body>
     <?php
-
+    $populate = CustPagesController::PopulateLanding();
+    //var_dump($populate);
     //form data being pulled from login to Index to cust_landing where in cust_landing i am putting Post data into session.
+    $star = '<i class="far fa-star"></i>';
+    $filledStar = '<i class="fas fa-star"></i>';
     ?>
     <section class="cust-landing-section">
         <div class="content-container">
@@ -28,15 +32,30 @@ $username = CustPagesController::SessionUsername();
             <div class="search-container">find a mower</div>
             <div class="user-container">
                 <?php
-                for ($i = 0; $i <= 15; $i++) {
-                    echo "<div class='box'>
-                <img></img>
-                <p>Username</p>
-                <p>here is a bio about me blah blah blah</p>
-                <span>
-                <button>Select</button>
-                </span>
-            </div>";
+                foreach ($populate as $key) {
+                    echo "<div class='box'>";
+                    echo "<img></img>";
+                    echo "<p>" . ucfirst($key['username']) . "<br>";
+                    if ($key['rating'] <= 0) {
+                        echo $filledStar . $star . $star . $star . $star;
+                    } else if ($key['rating'] <= 1) {
+                        echo $filledStar . $filledStar . $star . $star . $star;
+                    } else if ($key['rating'] <= 2) {
+                        echo $filledStar . $filledStar . $filledStar . $star . $star;
+                    } else if ($key['rating'] <= 3) {
+                        echo $filledStar . $filledStar . $filledStar . $star . $star;
+                    } else if ($key['rating'] >= 4 && $key['rating'] < 5) {
+                        echo $filledStar . $filledStar . $filledStar . $filledStar . $star;
+                    } else {
+                        echo $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
+                    }
+                    echo "<br>" . $key['charge'] . "&dollar; / hr</p>";
+                    echo '<p>here is a bio about me blah blah blah</p>
+                    
+            <span>
+            <button>Select</button>
+            </span>
+        </div>';
                 }
                 ?>
             </div>

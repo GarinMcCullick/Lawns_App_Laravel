@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+
 
 class CustPagesController extends Controller
 {
@@ -36,5 +38,22 @@ class CustPagesController extends Controller
     {
         $request->session()->forget('user');
         return redirect('/');
+    }
+    public static function GetAllUsersData()
+    {
+
+        $response = DB::select("select * from users");
+
+        $array = json_decode(json_encode($response), true);
+
+        return $array;
+    }
+    public static function PopulateLanding()
+    {
+        $response = DB::select("select username, id, charge, rating from users");
+
+        $array = json_decode(json_encode($response), true);
+
+        return $array;
     }
 }
