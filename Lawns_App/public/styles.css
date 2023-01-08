@@ -756,3 +756,133 @@ margin-right:2rem;
    height:60px;   /* Height of the footer */
    background:black;
 }
+/***************************************My Lawns************************************************/
+/*<body class="yards-body">
+    <h1 class="yards-h1">My Yards</h1>
+    <div class="yards-container">
+        <div class="row">
+            <div class="column">here</div>
+            <div class="column">here</div>
+            <div class="column">here</div>
+            <div class="column">here</div>
+        </div>
+    </div>
+</body>*/
+.yards-body{
+  width:100vw;
+  height:100vh;
+  background: url("grass.jpg");
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.yards-h1{
+    width: 80%;
+    height: 5%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #131313;
+    color: #e0dfdc;
+    letter-spacing: 0.1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+      0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+      0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+      0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+      0 22px 30px rgba(0, 0, 0, 0.9);
+  }
+.yards-container{
+  background-color: whitesmoke;
+  border-bottom-left-radius:25px;
+  border-top-left-radius:25px;
+  width:85%;
+  height:85%;
+  overflow-y: scroll;
+  font-size: 20px;
+}
+#style-15::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-15::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-15::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear,
+									   40% 0%,
+									   75% 84%,
+									   from(#4D9C41),
+									   to(#19911D),
+									   color-stop(.6,#54DE5D))
+}
+
+.row{
+  width:100%;
+  height:10%;
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.column1{
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+  width:15%;
+  height:90%;
+}
+.column2{
+  display:flex;
+  justify-content: start;
+  padding-left:1rem;
+  padding-right:1rem;
+  align-items: flex-end;
+  width:45%;
+  height:90%;
+}
+.column3{
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+  width:15%;
+  height:90%;
+}
+.column4{
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+  width:15%;
+  height:90%;
+}
+.yards-hr{
+  margin-left:auto;
+  margin-right:auto;
+  width:90%;
+  border: 1px solid black;
+}
+#map-icon{
+  color:skyblue;
+  font-size:40px;
+}
+#map-icon:hover{
+  cursor: pointer;
+}
+#x-icon{
+  color:red;
+  font-size:40px;
+}
+#x-icon:hover{
+  cursor: pointer;
+}

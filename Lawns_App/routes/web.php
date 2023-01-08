@@ -23,27 +23,45 @@ Route::view("login", 'login');
 
 
 Route::get('/landing', function () {
-    return view('cust_landing') . view('hamburger_menu');
+    if (CustPagesController::CustAuthCheck() === 1) {
+        return view('cust_landing') . view('hamburger_menu');
+    } else return view('login');
 });
 
 Route::get('/refer_a_friend', function () {
-    return view('refer_a_friend') . view('hamburger_menu');
+    if (CustPagesController::CustAuthCheck() === 1) {
+        return view('refer_a_friend') . view('hamburger_menu');
+    } else return view('login');
 });
 
 Route::get('/orders', function () {
-    return view('user_orders') . view('hamburger_menu');
+    if (CustPagesController::CustAuthCheck() === 1) {
+        return view('user_orders') . view('hamburger_menu');
+    } else return view('login');
 });
 
 Route::get('/profile', function () {
-    return view('user_profile') . view('hamburger_menu');
+    if (CustPagesController::CustAuthCheck() === 1) {
+        return view('user_profile') . view('hamburger_menu');
+    } else return view('login');
 });
 
 Route::get('/settings', function () {
-    return view('user_settings') . view('hamburger_menu');
+    if (CustPagesController::CustAuthCheck() === 1) {
+        return view('user_settings') . view('hamburger_menu');
+    } else return view('login');
 });
 
 Route::get('/wallet', function () {
-    return view('wallet') . view('hamburger_menu');
+    if (CustPagesController::CustAuthCheck() === 1) {
+        return view('wallet') . view('hamburger_menu');
+    } else return view('login');
+});
+
+Route::get('/myLawns', function () {
+    if (CustPagesController::CustAuthCheck() === 2) {
+        return view('myLawns') . view('hamburger_menu');
+    } else return view('login');
 });
 
 Route::get('session/remove', [CustPagesController::class, 'Logout']);//there is no view for session/remove it just leads to a redirect and a point to hit the logout function
