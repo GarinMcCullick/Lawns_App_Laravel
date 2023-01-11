@@ -64,4 +64,10 @@ Route::get('/myLawns', function () {
     } else return view('login');
 });
 
+Route::get('/find-a-yard', function () {
+    if (CustPagesController::CustAuthCheck() === 2) {
+        return view('find_a_yard') . view('hamburger_menu');
+    } else return view('login');
+});
+
 Route::get('session/remove', [CustPagesController::class, 'Logout']);//there is no view for session/remove it just leads to a redirect and a point to hit the logout function
