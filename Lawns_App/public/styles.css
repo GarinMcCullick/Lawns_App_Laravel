@@ -886,3 +886,18 @@ margin-right:2rem;
 #x-icon:hover{
   cursor: pointer;
 }
+/************************************servicerRating view*****************************/
+#empty-star-icon{
+  color:grey;
+  text-shadow: 0 0 1px #000;
+}
+#filled-star-icon{
+  color:gold;
+  text-shadow: 0 0 3px #000;
+}
+.rating-box{
+  text-align: center;
+}
+.rating-box p{
+  margin:1rem;
+}

@@ -21,8 +21,8 @@ $username = CustPagesController::SessionUsername();
     $populate = CustPagesController::PopulateLanding();
     //var_dump($populate);
     //form data being pulled from login to Index to cust_landing where in cust_landing i am putting Post data into session.
-    $star = '<i class="far fa-star"></i>';
-    $filledStar = '<i class="fas fa-star"></i>';
+    $star = '<i id="empty-star-icon" class="far fa-star"></i>';
+    $filledStar = '<i id="filled-star-icon" class="fas fa-star"></i>';
     ?>
     <section class="cust-landing-section">
         <div class="content-container">
