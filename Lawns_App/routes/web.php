@@ -60,13 +60,37 @@ Route::get('/wallet', function () {
 
 Route::get('/myLawns', function () {
     if (CustPagesController::CustAuthCheck() === 2) {
-        return view('myLawns') . view('hamburger_menu');
+        return view('myLawns') . view('servicer_hamburger_menu');
     } else return view('login');
 });
 
-Route::get('/find-a-yard', function () {
+Route::get('/find_a_yard', function () {
     if (CustPagesController::CustAuthCheck() === 2) {
-        return view('find_a_yard') . view('hamburger_menu');
+        return view('find_a_yard') . view('servicer_hamburger_menu');
+    } else return view('login');
+});
+
+Route::get('/prev_yards', function () {
+    if (CustPagesController::CustAuthCheck() === 2) {
+        return view('prev_yards') . view('servicer_hamburger_menu');
+    } else return view('login');
+});
+
+Route::get('/servicer_settings', function () {
+    if (CustPagesController::CustAuthCheck() === 2) {
+        return view('servicer_settings') . view('servicer_hamburger_menu');
+    } else return view('login');
+});
+
+Route::get('/servicer_profile', function () {
+    if (CustPagesController::CustAuthCheck() === 2) {
+        return view('servicer_profile') . view('servicer_hamburger_menu');
+    } else return view('login');
+});
+
+Route::get('/servicerRating', function () {
+    if (CustPagesController::CustAuthCheck() === 2) {
+        return view('servicerRating') . view('servicer_hamburger_menu');
     } else return view('login');
 });
 

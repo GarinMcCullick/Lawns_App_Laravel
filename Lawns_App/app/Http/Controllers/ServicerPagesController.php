@@ -16,4 +16,10 @@ class ServicerPagesController extends Controller
             return session('user')['username'];
         } else return '';
     }
+    public static function GetRating()
+    {
+        $user = DB::table('users')->where('username', 'garin')->first();
+
+        return $user->rating;
+    }
 }
