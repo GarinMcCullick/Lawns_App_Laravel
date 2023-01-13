@@ -36,7 +36,8 @@ $username = CustPagesController::SessionUsername();
                     echo "<div class='box'>";
                     echo "<img></img>";
                     echo "<p>" . ucfirst($key['username']) . "<br>";
-                    echo "Customer Rating" . "<br>";
+                    echo "Customers Rating" . "<br>";
+                    echo "(3)" . "<br>";
                     if ($key['rating'] <= 0) {
                         echo $filledStar . $star . $star . $star . $star;
                     } else if ($key['rating'] <= 1) {

@@ -5,8 +5,36 @@ use App\Http\Controllers\ServicerPagesController;
 
 $username = CustPagesController::SessionUsername();
 $rating = ServicerPagesController::GetRating();
+/********************************************************/
 $star = '<i id="empty-star-icon" class="far fa-star"></i>';
 $filledStar = '<i id="filled-star-icon" class="fas fa-star"></i>';
+if ($rating <= 0) {
+    $stars = $filledStar . $star . $star . $star . $star;
+} else if ($rating <= 1) {
+    $stars = $filledStar . $filledStar . $star . $star . $star;
+} else if ($rating <= 2) {
+    $stars = $filledStar . $filledStar . $filledStar . $star . $star;
+} else if ($rating <= 3) {
+    $stars = $filledStar . $filledStar . $filledStar . $star . $star;
+} else if ($rating >= 4 && $rating < 5) {
+    $stars = $filledStar . $filledStar . $filledStar . $filledStar . $star;
+} else {
+    $stars = $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
+}
+/*********************************************************/
+if ($rating <= 0) {
+    $servicerStars = $filledStar . $star . $star . $star . $star;
+} else if ($rating <= 1) {
+    $servicerStars = $filledStar . $filledStar . $star . $star . $star;
+} else if ($rating <= 2) {
+    $servicerStars = $filledStar . $filledStar . $filledStar . $star . $star;
+} else if ($rating <= 3) {
+    $servicerStars = $filledStar . $filledStar . $filledStar . $star . $star;
+} else if ($rating >= 4 && $rating < 5) {
+    $servicerStars = $filledStar . $filledStar . $filledStar . $filledStar . $star;
+} else {
+    $servicerStars = $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,32 +48,28 @@ $filledStar = '<i id="filled-star-icon" class="fas fa-star"></i>';
 </head>
 
 <body>
-    <section class="cust-landing-section">
+    <section class="cust-review-section">
         <div class="refferal-container">
             <h3 class="profile-title">
                 <?php echo ucfirst($username);
-                echo ' here are your reviews and rating!';
+                echo " your average rating is:";
+                echo "<p>" . $servicerStars . "</p>";
                 ?>
             </h3>
-            <div class="rating-box">
-                <p>Rating</p>
-                <?php
-                if ($rating <= 0) {
-                    echo $filledStar . $star . $star . $star . $star;
-                } else if ($rating <= 1) {
-                    echo $filledStar . $filledStar . $star . $star . $star;
-                } else if ($rating <= 2) {
-                    echo $filledStar . $filledStar . $filledStar . $star . $star;
-                } else if ($rating <= 3) {
-                    echo $filledStar . $filledStar . $filledStar . $star . $star;
-                } else if ($rating >= 4 && $rating < 5) {
-                    echo $filledStar . $filledStar . $filledStar . $filledStar . $star;
-                } else {
-                    echo $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
-                }
-                ?>
-            </div>
-        </div>
+            <?php
+            for ($i = 0; $i < 10; $i++) {
+                echo "<div class='rating-box'>
+                <div>
+                    
+                         
+                    <div class='review-pic'></div>
+                <p>Karen</p>"
+                    . $stars . "<p>He was very friendly and got the job done quickly!</p></div></div>";
+            }; ?>
+
+
+
+
     </section>
 </body>
 
