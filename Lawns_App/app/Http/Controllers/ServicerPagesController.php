@@ -18,9 +18,9 @@ class ServicerPagesController extends Controller
     }
     public static function GetRating()
     {
-        $user = DB::table('users')->where('username', 'garin')->first();
+        $user = DB::table('users')->where('username', session('user')['username'])->first();
 
-        return $user->rating;
+        return $user->servicerRating;
     }
     public static function PopulateFindAYard()
     {
