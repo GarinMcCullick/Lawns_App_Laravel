@@ -36,22 +36,24 @@ $username = CustPagesController::SessionUsername();
                     echo "<div class='box'>";
                     echo "<img></img>";
                     echo "<p>" . ucfirst($key['username']) . "<br>";
-                    if ($key['rating'] <= 0) {
+                    echo "Servicer Rating" . "<br>";
+                    if ($key['servicerRating'] <= 0) {
                         echo $filledStar . $star . $star . $star . $star;
-                    } else if ($key['rating'] <= 1) {
+                    } else if ($key['servicerRating'] <= 1) {
                         echo $filledStar . $filledStar . $star . $star . $star;
-                    } else if ($key['rating'] <= 2) {
+                    } else if ($key['servicerRating'] <= 2) {
                         echo $filledStar . $filledStar . $filledStar . $star . $star;
-                    } else if ($key['rating'] <= 3) {
+                    } else if ($key['servicerRating'] <= 3) {
                         echo $filledStar . $filledStar . $filledStar . $star . $star;
-                    } else if ($key['rating'] >= 4 && $key['rating'] < 5) {
+                    } else if ($key['servicerRating'] >= 4 && $key['servicerRating'] < 5) {
                         echo $filledStar . $filledStar . $filledStar . $filledStar . $star;
                     } else {
                         echo $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
                     }
-                    echo "<br>" . $key['charge'] . "&dollar; / hr</p>";
-                    echo '<p>here is a bio about me blah blah blah</p>
-                    
+                    echo '<p>';
+                    echo $key['servicerBio'];
+                    echo '</p>';
+                    echo '      
             <span>
             <button>Select</button>
             </span>

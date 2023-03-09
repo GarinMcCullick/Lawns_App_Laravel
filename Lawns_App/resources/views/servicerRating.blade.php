@@ -4,33 +4,21 @@ use App\Http\Controllers\CustPagesController;
 use App\Http\Controllers\ServicerPagesController;
 
 $username = CustPagesController::SessionUsername();
-$rating = ServicerPagesController::GetRating();
+$servicerRating = ServicerPagesController::GetRating();
 /********************************************************/
 $star = '<i id="empty-star-icon" class="far fa-star"></i>';
 $filledStar = '<i id="filled-star-icon" class="fas fa-star"></i>';
-if ($rating <= 0) {
-    $stars = $filledStar . $star . $star . $star . $star;
-} else if ($rating <= 1) {
-    $stars = $filledStar . $filledStar . $star . $star . $star;
-} else if ($rating <= 2) {
-    $stars = $filledStar . $filledStar . $filledStar . $star . $star;
-} else if ($rating <= 3) {
-    $stars = $filledStar . $filledStar . $filledStar . $star . $star;
-} else if ($rating >= 4 && $rating < 5) {
-    $stars = $filledStar . $filledStar . $filledStar . $filledStar . $star;
-} else {
-    $stars = $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
-}
 /*********************************************************/
-if ($rating <= 0) {
+
+if ($servicerRating <= 0) {
     $servicerStars = $filledStar . $star . $star . $star . $star;
-} else if ($rating <= 1) {
+} else if ($servicerRating <= 1) {
     $servicerStars = $filledStar . $filledStar . $star . $star . $star;
-} else if ($rating <= 2) {
+} else if ($servicerRating <= 2) {
     $servicerStars = $filledStar . $filledStar . $filledStar . $star . $star;
-} else if ($rating <= 3) {
+} else if ($servicerRating <= 3) {
     $servicerStars = $filledStar . $filledStar . $filledStar . $star . $star;
-} else if ($rating >= 4 && $rating < 5) {
+} else if ($servicerRating >= 4 && $rating < 5) {
     $servicerStars = $filledStar . $filledStar . $filledStar . $filledStar . $star;
 } else {
     $servicerStars = $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
@@ -53,7 +41,7 @@ if ($rating <= 0) {
             <h3 class="profile-title">
                 <?php echo ucfirst($username);
                 echo " your average rating is:";
-                echo "<p>" . $servicerStars . "</p>";
+                echo "<p>" . $servicerStars . "</p>"; //make 2 tables for cust reviews and servicer reviews tied to user id
                 ?>
             </h3>
             <?php
@@ -63,8 +51,8 @@ if ($rating <= 0) {
                     
                          
                     <div class='review-pic'></div>
-                <p>Karen</p>"
-                    . $stars . "<p>He was very friendly and got the job done quickly!</p></div></div>";
+                <p>Anonymous</p>"
+                    . $servicerStars . "<p>He was very friendly and got the job done quickly!</p></div></div>";
             }; ?>
 
 

@@ -25,6 +25,8 @@ class CustPagesController extends Controller
             return redirect('landing'); //redirects to landing if password = password
         } else if (session('user')['password'] == 'password' && session('user')['auth'] == 'admin') {
             return redirect('myLawns');
+        } else if (session('user')['auth'] == 'servicer') {
+            return redirect('myLawns');
         } else {
             session()->forget('user'); //if wrong password it clears the user session so on login page after redirecting back it will be clear instead of populated w wrong info
             return redirect('login');
@@ -36,6 +38,8 @@ class CustPagesController extends Controller
             if (session('user')['username'] && session('user')['password'] && session('user')['auth'] == 'cust') {
                 return 1;
             } else if (session('user')['username'] && session('user')['password'] && session('user')['auth'] == 'admin') {
+                return 2;
+            } else if (session('user')['auth'] == 'servicer') {
                 return 2;
             }
         } else {
@@ -70,7 +74,7 @@ class CustPagesController extends Controller
     }
     public static function PopulateLanding()
     {
-        $response = DB::select("select username, id, charge, rating from users");
+        $response = DB::select("select username, id, servicerRating, servicerBio from users where servicerBio !=''"); //where cust bio is not empty
 
         $array = json_decode(json_encode($response), true);
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustPagesController;
+use App\Http\Controllers\ServicerPagesController;
 
 $username = CustPagesController::SessionUsername();
 ?>
@@ -18,7 +19,7 @@ $username = CustPagesController::SessionUsername();
 
 <body>
     <?php
-    $populate = CustPagesController::PopulateLanding();
+    $populate = ServicerPagesController::PopulateFindAYard();
     //var_dump($populate);
     //form data being pulled from login to Index to cust_landing where in cust_landing i am putting Post data into session.
     $star = '<i class="far fa-star"></i>';
@@ -36,22 +37,22 @@ $username = CustPagesController::SessionUsername();
                     echo "<div class='box'>";
                     echo "<img></img>";
                     echo "<p>" . ucfirst($key['username']) . "<br>";
-                    echo "Customers Rating" . "<br>";
-                    echo "(3)" . "<br>";
-                    if ($key['rating'] <= 0) {
+                    echo "Customer Rating" . "<br>";
+                    if ($key['custRating'] <= 0) {
                         echo $filledStar . $star . $star . $star . $star;
-                    } else if ($key['rating'] <= 1) {
+                    } else if ($key['custRating'] <= 1) {
                         echo $filledStar . $filledStar . $star . $star . $star;
-                    } else if ($key['rating'] <= 2) {
+                    } else if ($key['custRating'] <= 2) {
                         echo $filledStar . $filledStar . $filledStar . $star . $star;
-                    } else if ($key['rating'] <= 3) {
+                    } else if ($key['custRating'] <= 3) {
                         echo $filledStar . $filledStar . $filledStar . $star . $star;
-                    } else if ($key['rating'] >= 4 && $key['rating'] < 5) {
+                    } else if ($key['custRating'] >= 4 && $key['custRating'] < 5) {
                         echo $filledStar . $filledStar . $filledStar . $filledStar . $star;
                     } else {
                         echo $filledStar . $filledStar . $filledStar . $filledStar . $filledStar;
                     }
-                    echo "<p>Here is what I" . "'" . "m looking for";
+                    echo '<p>';
+                    echo $key['custBio'];
                     echo '</p>
                     
             <span>
