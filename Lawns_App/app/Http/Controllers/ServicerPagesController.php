@@ -22,4 +22,12 @@ class ServicerPagesController extends Controller
 
         return $user->rating;
     }
+    public static function PopulateFindAYard()
+    {
+        $response = DB::select("select username, id, custRating, custBio from users where custBio !=''"); //where servicer bio is not empty
+
+        $array = json_decode(json_encode($response), true);
+
+        return $array;
+    }
 }
